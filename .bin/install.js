@@ -1,10 +1,7 @@
 #!/usr/bin/env node
-
-import { execSync } from 'child_process';
-
 const runCommand = command => {
     try {
-        execSync(`${command}`, { stdio: 'inherit' });
+        require('child_process').execSync(`${command}`, { stdio: 'inherit' });
     } catch (err) {
         console.error(`Failed to execute ${command}`, err);
         return false;
@@ -15,7 +12,7 @@ const runCommand = command => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/thisloke/node-base ${repoName}`;
-const installDepsCommand = `cd ${repoName} && npm install`;
+const installDepsCommand = `cd ${repoName} && npm install && rm -rf .git && rm -rf .bin && rm package.json && mv package-blank.json package.json && rm README.md && mv README-blank.md README.md`;
 
 console.log(`Cloning the repository ${repoName}`);
 
@@ -33,4 +30,7 @@ if (!installedDeps) {
     process.exit(-1);
 }
 
-console.log("Ready to start!");
+console.log(`Ready to start!\n
+ cd ${repoName}
+ npm run build:watch
+ npm run test:watch`);

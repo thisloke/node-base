@@ -13,7 +13,7 @@
 
 ### 1) Get your copy
 ```
-npx github:thisloke/node-base my-project
+npx github:thisloke/node-base my-node-project
 ```
 
 ### 2) Start development
