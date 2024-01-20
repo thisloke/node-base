@@ -1,7 +1,7 @@
 {
-  "name": "base",
+  "name": "node-base",
   "version": "1.0.0",
-  "description": "",
+  "description": "Very Simple nodejs boilerplate (with TS)",
   "main": "index.js",
   "scripts": {
     "start": "node build/main.js",
@@ -11,7 +11,10 @@
     "test:watch": "node --import tsx --test --watch **/*.spec.ts",
     "test": "node --import tsx --test **/*.spec.ts"
   },
-  "author": "",
+  "bin": {
+    "node-base": ".bin/install.js"
+  },
+  "author": "Lorenzo Iovino",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.5",
