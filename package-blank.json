@@ -8,8 +8,8 @@
     "build": "tsc -p tsconfig.json",
     "build+start": "npm run build && npm run start",
     "build:watch": "tsc -w -p tsconfig.json",
-    "test:watch": "node --import tsx --test --watch **/*.spec.ts",
-    "test": "node --import tsx --test **/*.spec.ts"
+    "test:watch": "node --import tsx --test --watch **/**/*.spec.ts",
+    "test": "node --import tsx --test **/**/*.spec.ts"
   },
   "author": "",
   "license": "ISC",
