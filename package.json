@@ -9,8 +9,9 @@
     "build+start": "npm run build && npm run start",
     "build:watch": "tsc -w -p tsconfig.json",
     "test:watch": "node --import tsx --test --watch **/**/*.spec.ts",
-    "test": "node --import tsx --test **/**/*.spec.ts"
-  },
+    "test:watch:only": "node --import tsx --test --test-only --watch **/**/*.spec.ts",
+    "test": "node --import tsx --test **/**/*.spec.ts",
+    "test:only": "node --import tsx --test --test-only **/**/*.spec.ts"},
   "bin": {
     "node-base": ".bin/install.js"
   },
