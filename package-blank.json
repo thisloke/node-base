@@ -1,21 +1,21 @@
 {
-  "name": "node-base-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node build/main.js",
-    "build": "tsc -p tsconfig.json",
-    "build+start": "npm run build && npm run start",
-    "build:watch": "tsc -w -p tsconfig.json",
-    "test:watch": "node --import tsx --test --watch **/**/*.spec.ts",
-    "test": "node --import tsx --test **/**/*.spec.ts"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^20.11.5",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
-  }
+	"name": "node-base-project",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node build/main.js",
+		"build": "tsc -p tsconfig.json",
+		"build+start": "npm run build && npm run start",
+		"build:watch": "tsc -w -p tsconfig.json",
+		"test:watch": "node --import tsx --test --watch $(find src -name '*.spec.ts')",
+		"test": "node --import tsx --test $(find src -name '*.spec.ts')"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^20.11.5",
+		"tsx": "^4.7.0",
+		"typescript": "^5.3.3"
+	}
 }
